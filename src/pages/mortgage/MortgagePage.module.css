@@ -1,0 +1,920 @@
+.stage {
+  min-height: 100dvh;
+  background: var(--background-secondary);
+  color: var(--text-primary-default);
+  -webkit-font-smoothing: antialiased;
+}
+.desktopHeader {
+  width: min(1160px, calc(100% - 96px));
+  height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+}
+.brand:hover {
+  text-decoration: none;
+}
+.brand strong {
+  font-size: 30px;
+  letter-spacing: -1.2px;
+}
+.brand > span:last-child {
+  font-size: 16px;
+  color: var(--text-secondary-default);
+}
+.brandMark {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: white;
+  background: var(--control-main-primary-default);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+}
+.brandDivider {
+  width: 1px;
+  height: 24px;
+  background: var(--stroke-border-default);
+  margin-inline: 8px;
+}
+.kitLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary-default);
+  font-size: 14px;
+}
+.stageBody {
+  width: min(1040px, calc(100% - 96px));
+  margin: 0 auto;
+  padding: 12px 0 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 80px;
+  align-items: center;
+}
+.story {
+  padding: 20px 0;
+}
+.storyLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-main-default);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.storyLabel > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.story h2 {
+  font-size: clamp(34px, 3.7vw, 46px);
+  line-height: 1.13;
+  letter-spacing: -1.5px;
+  text-wrap: balance;
+}
+.storyIntro {
+  color: var(--text-secondary-default);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 22px;
+}
+.homeDrawing {
+  width: 100%;
+  max-width: 430px;
+  color: var(--control-main-primary-default);
+  margin: 26px 0 4px;
+}
+.storyNote {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.storyNote p {
+  color: var(--text-secondary-default);
+}
+.storyNote strong {
+  color: var(--text-primary-default);
+  font-weight: 600;
+}
+.noteIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: white;
+  color: var(--text-main-default);
+}
+.prototypeTools {
+  border-top: 1px solid var(--stroke-border-default);
+  margin-top: 38px;
+  padding-top: 18px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary-default);
+}
+.prototypeTools button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  min-height: 40px;
+  padding: 0 4px;
+  font-size: 12px;
+}
+.device {
+  background: var(--background-primary);
+  border-radius: 28px;
+  box-shadow:
+    0 2px 5px #0d162e05,
+    0 16px 55px #0d162e0b,
+    0 0 0 1px #0d162e08;
+  height: min(820px, calc(100dvh - 150px));
+  min-height: 570px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  min-height: 72px;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--stroke-border-neutral);
+}
+.smallBrand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+.smallBrand .brandMark {
+  width: 26px;
+  height: 26px;
+  font-size: 20px;
+  border-radius: 7px;
+}
+.appTitle {
+  font-size: 14px;
+  font-weight: 600;
+}
+.smallBrand + .appTitle {
+  margin-left: auto;
+  margin-right: 6px;
+  color: var(--text-secondary-default);
+  font-weight: 400;
+}
+.iconButton {
+  border: 0;
+  background: transparent;
+  color: var(--text-primary-default);
+  display: grid;
+  place-items: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 150ms,
+    transform 150ms;
+}
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.iconButton:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.screen {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stroke-border-default) transparent;
+}
+.content {
+  padding: 24px 24px 28px;
+}
+.title {
+  font-size: 29px;
+  line-height: 1.13;
+  letter-spacing: -0.7px;
+  font-weight: 700;
+  text-wrap: balance;
+  outline: none;
+}
+.subtitle {
+  color: var(--text-secondary-default);
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 12px;
+  text-wrap: pretty;
+}
+.progress {
+  padding: 20px 24px 0;
+}
+.progressText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--text-secondary-default);
+}
+.progressText > span:first-child {
+  color: var(--text-main-default);
+  font-weight: 600;
+}
+.progressBars {
+  display: flex;
+  gap: 5px;
+  margin-top: 9px;
+}
+.progressBars span {
+  height: 3px;
+  border-radius: 3px;
+  flex: 1;
+  background: var(--background-secondary);
+}
+.progressBars .filled {
+  background: var(--control-main-primary-default);
+}
+.form,
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 28px;
+}
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.calculator {
+  gap: 20px;
+}
+.choiceGroup {
+  min-width: 0;
+}
+.choiceGroup legend {
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  padding: 0;
+}
+.fieldHint {
+  color: var(--text-secondary-default);
+  font-size: 13px;
+  line-height: 18px;
+  margin: -4px 0 12px;
+}
+.choices {
+  display: grid;
+  gap: 8px;
+}
+.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.dates {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--stroke-border-default);
+  cursor: pointer;
+  background: var(--background-primary);
+  font-size: 14px;
+  line-height: 20px;
+  transition:
+    background-color 150ms,
+    box-shadow 150ms;
+}
+.choice input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  inset: 0;
+  cursor: pointer;
+}
+.choiceText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.choiceText small {
+  color: var(--text-secondary-default);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+.grid .choice {
+  justify-content: center;
+  text-align: center;
+  padding: 12px 8px;
+}
+.dates .choice {
+  min-height: 76px;
+  justify-content: center;
+  text-align: center;
+}
+.dates .choiceText > span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.choice.selected {
+  background: var(--surface-main-default);
+  box-shadow: inset 0 0 0 1.5px var(--control-main-primary-default);
+  color: var(--text-main-default);
+}
+.selected .choiceText small {
+  color: var(--text-main-default);
+}
+.radioDot {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--stroke-border-default);
+  flex-shrink: 0;
+  background: var(--background-primary);
+}
+.selected .radioDot {
+  box-shadow: inset 0 0 0 6px var(--control-main-primary-default);
+}
+.choice:has(input:focus-visible),
+.iconButton:focus-visible,
+.prototypeTools button:focus-visible,
+.quickAmounts button:focus-visible,
+.textButton:focus-visible,
+.consentText button:focus-visible {
+  outline: 2px solid var(--stroke-control-focused);
+  outline-offset: 3px;
+}
+.invalidChoice {
+  box-shadow: inset 0 0 0 1px var(--stroke-border-negative);
+}
+.error {
+  margin-top: 8px;
+  color: var(--text-negative-default);
+  font-size: 13px;
+  line-height: 18px;
+}
+.errorSummary,
+.sendError {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-negative-default);
+  color: var(--text-negative-default);
+  font-size: 13px;
+  line-height: 19px;
+  outline: none;
+}
+.sendError p {
+  margin-top: 4px;
+}
+.calculatorFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stage input:not([type='radio'], [type='checkbox'], [type='range']) {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+.inputField > div {
+  border: 1px solid var(--stroke-border-default);
+  border-radius: 12px;
+  min-height: 52px;
+}
+.inputField:has(input[aria-invalid='true']) > div {
+  border-color: var(--stroke-border-negative);
+}
+.termField > label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+.termField strong {
+  font-variant-numeric: tabular-nums;
+}
+.termField > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary-default);
+  margin-top: -3px;
+}
+.termField input {
+  width: 100%;
+  height: 44px;
+  margin: 8px 0 0;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+.termField input::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to right,
+    var(--control-main-primary-default) var(--range-fill),
+    var(--stroke-border-default) var(--range-fill)
+  );
+}
+.termField input::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  box-shadow:
+    0 0 0 1px var(--stroke-border-default),
+    0 2px 4px #0d162e14;
+  background: var(--control-main-primary-default);
+  border-radius: 50%;
+  margin-top: -8px;
+}
+.termField input::-moz-range-track {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--stroke-border-default);
+}
+.termField input::-moz-range-progress {
+  background: var(--control-main-primary-default);
+  height: 4px;
+}
+.termField input::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: 3px solid white;
+  background: var(--control-main-primary-default);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--stroke-border-default);
+}
+.paymentCard {
+  border-radius: 16px;
+  background: var(--surface-main-default);
+  padding: 20px;
+}
+.paymentLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-main-default);
+  font-size: 13px;
+}
+.paymentAmount {
+  font-size: 38px;
+  line-height: 46px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  margin: 8px 0 16px;
+  font-variant-numeric: tabular-nums;
+}
+.paymentAmount > span {
+  font-size: 28px;
+  font-weight: 400;
+}
+.paymentDetails {
+  border-top: 1px solid var(--solid-blue80);
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+}
+.paymentDetails strong {
+  font-weight: 600;
+}
+.paymentCard > p {
+  color: var(--text-secondary-default);
+  font-size: 11px;
+  line-height: 16px;
+  margin-top: 12px;
+}
+.supportNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 19px;
+  color: var(--text-secondary-default);
+}
+.supportNote svg {
+  flex: none;
+  margin-top: 1px;
+}
+.appFooter {
+  flex: none;
+  background: var(--background-primary);
+  padding: 16px 24px 18px;
+  border-top: 1px solid var(--stroke-border-neutral);
+  box-shadow: 0 -8px 16px #ffffffc2;
+  z-index: 1;
+}
+.appFooter > button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  transition:
+    transform 150ms,
+    background-color 150ms;
+}
+.appFooter > button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.footerHint {
+  display: block;
+  color: var(--text-secondary-default);
+  font-size: 11px;
+  text-align: center;
+  margin-top: 9px;
+  line-height: 16px;
+}
+.incomeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quickAmounts {
+  display: flex;
+  gap: 6px;
+}
+.quickAmounts button {
+  flex: 1;
+  padding: 8px 4px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--background-secondary);
+  font-size: 13px;
+  color: var(--text-primary-default);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+}
+.quickAmounts button[aria-pressed='true'] {
+  color: var(--text-main-default);
+  background: var(--surface-main-default);
+}
+.calmNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--text-secondary-default);
+  font-size: 13px;
+  line-height: 20px;
+}
+.calmNote svg {
+  flex: none;
+  color: var(--text-primary-default);
+  margin-top: 2px;
+}
+.profileTag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary-default);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--stroke-border-neutral);
+  margin-bottom: -5px;
+}
+.lockedField {
+  position: relative;
+}
+.lockedField input {
+  color: var(--text-secondary-default);
+  padding-right: 30px;
+}
+.lockedField > div > div {
+  background: var(--background-secondary);
+}
+.lockIcon {
+  position: absolute;
+  right: 14px;
+  top: 42px;
+  color: var(--text-secondary-default);
+  pointer-events: none;
+}
+.contactSummary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  border-top: 1px solid var(--stroke-border-neutral);
+  border-bottom: 1px solid var(--stroke-border-neutral);
+}
+.contactSummary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.contactSummary > div > span {
+  font-size: 12px;
+  color: var(--text-secondary-default);
+}
+.contactSummary strong {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.contactIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--background-secondary);
+}
+.textButton {
+  border: 0;
+  padding: 8px 0 8px 8px;
+  min-height: 44px;
+  background: transparent;
+  color: var(--text-main-default);
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: auto;
+}
+.marketing {
+  min-height: 44px;
+  align-items: center;
+  line-height: 20px;
+}
+.consentText {
+  font-size: 12px;
+  line-height: 19px;
+  color: var(--text-secondary-default);
+  margin-bottom: 12px;
+}
+.consentText button {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-main-default);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.successContent {
+  padding-top: 32px;
+}
+.successMark {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-positive-default);
+  color: var(--text-positive-default);
+  margin-bottom: 24px;
+}
+.successLabel {
+  color: var(--text-positive-default);
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.appointment {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 16px;
+  background: var(--surface-main-default);
+  border-radius: 16px;
+  margin-top: 26px;
+}
+.calendarTile {
+  width: 52px;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 9px;
+  box-shadow: 0 2px 4px #0d162e08;
+  overflow: hidden;
+}
+.calendarTile span {
+  font-size: 11px;
+  line-height: 19px;
+  background: var(--control-main-primary-default);
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+.calendarTile strong {
+  font-size: 25px;
+  line-height: 36px;
+  font-weight: 600;
+}
+.appointment > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.appointment > div:last-child strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+.appointment > div:last-child span {
+  font-size: 12px;
+  color: var(--text-secondary-default);
+}
+.successPhone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-secondary-default);
+  font-size: 13px;
+  margin-top: 15px;
+}
+.whatsNext {
+  margin: 28px 0;
+}
+.whatsNext h2 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+}
+.whatsNext > div {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+.whatsNext > div > span {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  background: var(--background-secondary);
+  font-size: 12px;
+  color: var(--text-secondary-default);
+}
+.whatsNext p {
+  font-size: 14px;
+  line-height: 21px;
+}
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 21px;
+}
+.modalBody small {
+  color: var(--text-secondary-default);
+}
+.modalBody > label {
+  min-height: 44px;
+}
+.modalKitLink {
+  text-align: center;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+}
+@media (hover: hover) {
+  .iconButton:hover:not(:disabled) {
+    background: var(--background-secondary);
+  }
+  .choice:hover:not(.selected) {
+    background: var(--background-secondary);
+  }
+  .quickAmounts button:hover {
+    background: var(--surface-main-default);
+  }
+  .prototypeTools button:hover,
+  .kitLink:hover {
+    color: var(--text-main-default);
+  }
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .stageBody {
+    gap: 36px;
+    width: calc(100% - 64px);
+    grid-template-columns: minmax(0, 1fr) 400px;
+  }
+  .story h2 {
+    font-size: 34px;
+  }
+  .storyIntro {
+    font-size: 15px;
+  }
+  .storyIntro br {
+    display: none;
+  }
+  .prototypeTools {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+@media (max-width: 700px) {
+  .stage {
+    background: var(--background-primary);
+  }
+  .desktopHeader,
+  .story {
+    display: none;
+  }
+  .stageBody {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .device {
+    border-radius: 0;
+    box-shadow: none;
+    height: 100dvh;
+    min-height: 0;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .appHeader {
+    min-height: 64px;
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+  .appFooter {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+}
+@media (max-width: 360px) {
+  .content {
+    padding-inline: 18px;
+  }
+  .progress {
+    padding-inline: 18px;
+  }
+  .appFooter {
+    padding-inline: 18px;
+  }
+  .title {
+    font-size: 27px;
+  }
+  .appTitle {
+    font-size: 13px;
+  }
+  .choice {
+    font-size: 13px;
+  }
+  .contactSummary {
+    gap: 6px;
+  }
+  .contactSummary strong {
+    font-size: 13px;
+  }
+}

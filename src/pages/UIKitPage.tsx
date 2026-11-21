@@ -61,6 +61,7 @@ export function UIKitPage({ prototype = false }: { prototype?: boolean }) {
   const [searchName, setSearchName] = useState('Квартира рядом с парком');
   const [message, setMessage] = useState('');
   useEffect(() => {
+    document.title = 'Циан · UI kit';
     document.documentElement.classList.toggle('design-theme--dark', dark);
     document.documentElement.classList.toggle('design-theme--light', !dark);
     return () => {
